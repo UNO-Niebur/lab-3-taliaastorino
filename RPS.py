@@ -9,13 +9,14 @@ def main():
   ties = 0
   losses = 0
   #Create a loop that continues as long as the user wants to play.
+  play_again = "y"
   while play_again.lower() == "y":
     #User can play as many games as they wish.
     
     #Randomly choose the computer between 'R', 'P', or 'S'
     computer = random.choice(["R", "P", "S"])
     #Prompt the user for their RPS selection
-    user = input("Enter R, P, or S. ").upper()
+    user = input("Enter R, P, or S: ").upper()
     #Determine winner and state what happened to the user
     if user == computer:
       print("Tie! Both chose", user)
@@ -26,8 +27,8 @@ def main():
       print("You win! :) Computer chose", computer)
       wins += 1
     else:
-       print("You lose! :( Computer chose", computer)
-       losses += 1
+      print("You lose! :( Computer chose", computer)
+      losses += 1
     #Ask the user if they would like to play again.
     play_again = input("Do you want to play again? (y/n): ")
   #In the end, print the stats
